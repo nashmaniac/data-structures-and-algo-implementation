@@ -6,6 +6,14 @@ import java.util.Scanner;
 
 public class CustomVector {
 
+    /*
+
+    Custom vector implementation
+
+    Vector is an automatically resizing array.
+
+     */
+
     int vectorSize = 0;
     int vectorCapacity;
     int[] vectorArray = null;
