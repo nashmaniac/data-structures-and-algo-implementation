@@ -11,6 +11,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public void push_front(int value) {
+        // O(1) implementation
         Node n = new Node(value, null);
         if(this.head == null) {
             this.head = n;
@@ -22,12 +23,14 @@ public class LinkedListWithoutTailPointer {
     }
 
     public int pop_front() {
+        // O(1) implementation
         Node n = this.head;
         this.head = this.head.next;
         return n.value;
     }
 
     public void print() {
+        // O(n) implementation
         Node current = this.head;
         System.out.println("Size: "+this.size());
         while (current!=null) {
@@ -54,10 +57,12 @@ public class LinkedListWithoutTailPointer {
     }
 
     public boolean empty() {
+        // O(1) implementation
         return this.head == null;
     }
 
     public int value_at(int index) {
+        // O(n) implementation
         if (index > this.size()-1) {
             return -1;
         }
@@ -70,12 +75,15 @@ public class LinkedListWithoutTailPointer {
     }
 
     public void push_back(int value) {
+        // O(n) implementation
         Node n = new Node(value, null);
         if(this.head == null){
+            // O(1) implementation
             this.head = n;
             this.size += 1;
             return;
         }
+        // O(n) implementation
         Node current = this.head;
         while (current.next!=null) {
             current = current.next;
@@ -94,6 +102,7 @@ public class LinkedListWithoutTailPointer {
             this.size -= 1;
             return value;
         }
+        // O(n) implementation
         Node current = this.head;
         while (current.next.next!=null) {
             current = current.next;
@@ -105,6 +114,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public int front() {
+        // O(1) implementation
         if(this.head != null) {
             return this.head.value;
         }
@@ -112,6 +122,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public int back() {
+        // O(n) implementation
         if(this.head == null){
             return -1;
         }
@@ -123,6 +134,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public void insert(int index, int value) {
+        // O(n) implementation
         Node current = this.head;
         int count = 0;
         while (count < index-1) {
@@ -136,6 +148,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public void erase(int index) {
+        // O(n) implementation
         Node current = this.head;
         int count = 0;
         while (count < index-1) {
@@ -147,6 +160,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public int value_n_from_end(int n) {
+        // O(n) implementation
         Node first = this.head;
         Node second = this.head;
         for(int i=0;i<n-1;i++) {
@@ -161,6 +175,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public void reverse() {
+        // O(n) implementation
         Node current = this.head;
         Node prev = null;
         while (current != null) {
@@ -173,6 +188,7 @@ public class LinkedListWithoutTailPointer {
     }
 
     public int remove_value(int value) {
+        // O(n) implementation
         if (this.head == null) {
             return -1;
         }
