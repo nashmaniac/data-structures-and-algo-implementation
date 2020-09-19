@@ -1,12 +1,12 @@
 package data_structures.linked_lists;
 
-import data_structures.linked_lists.implementations.SinglyLinkListWithTailPointer;
+import data_structures.linked_lists.implementations.DoublyLinkedList;
 
 import java.util.Scanner;
 
 public class LinkedListTest {
     public static void main(String[] args) {
-        SinglyLinkListWithTailPointer<String> l = new SinglyLinkListWithTailPointer<String>();
+        DoublyLinkedList<String> l = new DoublyLinkedList<>();
         String command = "s";
         Scanner scanner = new Scanner(System.in);
         while (!command.equals("q")) {
