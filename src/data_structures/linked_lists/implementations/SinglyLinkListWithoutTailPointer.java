@@ -89,6 +89,7 @@ public class SinglyLinkListWithoutTailPointer<E> implements LinkedListInterface<
         }
         SingleLinkNode<E> nextNode = current.getNext();
         current.setNext(null);
+        this.size -= 1;
         return nextNode != null ? nextNode.getValue() : null;
     }
 
@@ -127,6 +128,11 @@ public class SinglyLinkListWithoutTailPointer<E> implements LinkedListInterface<
 
     @Override
     public void erase(int index) {
+        if (index == 0) {
+            this.head = this.head.getNext();
+            this.size -= 1;
+            return;
+        }
         SingleLinkNode<E> current = this.head;
         for(int i=0;i<index-1;i++) {
             current = current.getNext();

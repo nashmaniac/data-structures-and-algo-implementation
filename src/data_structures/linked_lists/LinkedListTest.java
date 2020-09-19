@@ -1,12 +1,12 @@
 package data_structures.linked_lists;
 
-import data_structures.linked_lists.implementations.SinglyLinkListWithoutTailPointer;
+import data_structures.linked_lists.implementations.SinglyLinkListWithTailPointer;
 
 import java.util.Scanner;
 
 public class LinkedListTest {
     public static void main(String[] args) {
-        SinglyLinkListWithoutTailPointer<Integer> l = new SinglyLinkListWithoutTailPointer<>();
+        SinglyLinkListWithTailPointer<String> l = new SinglyLinkListWithTailPointer<String>();
         String command = "s";
         Scanner scanner = new Scanner(System.in);
         while (!command.equals("q")) {
@@ -42,7 +42,7 @@ public class LinkedListTest {
                 System.out.println(l.value_from_n_end(index));
             }
             if("remove_value".equals(command)) {
-                Integer index = scanner.nextInt();
+                String index = scanner.next();
                 l.remove_value(index);
             }
 
@@ -53,17 +53,17 @@ public class LinkedListTest {
 
             if("insert".equals(command)) {
                 int index = scanner.nextInt();
-                Integer value = scanner.nextInt();
+                String value = scanner.next();
                 l.insert(index, value);
             }
 
 
             if("push_front".equals(command)) {
-                Integer value = scanner.nextInt();
+                String value = scanner.next();
                 l.push_front(value);
             }
             if("push_back".equals(command)) {
-                Integer value = scanner.nextInt();
+                String value = scanner.next();
                 l.push_back(value);
             }
 
