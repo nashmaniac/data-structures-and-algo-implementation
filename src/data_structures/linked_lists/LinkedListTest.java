@@ -1,12 +1,12 @@
 package data_structures.linked_lists;
 
-import data_structures.linked_lists.implementations.DoublyLinkedList;
+import data_structures.linked_lists.implementations.CircularLinkList;
 
 import java.util.Scanner;
 
 public class LinkedListTest {
     public static void main(String[] args) {
-        DoublyLinkedList<String> l = new DoublyLinkedList<>();
+        CircularLinkList<String> l = new CircularLinkList<>();
         String command = "s";
         Scanner scanner = new Scanner(System.in);
         while (!command.equals("q")) {
