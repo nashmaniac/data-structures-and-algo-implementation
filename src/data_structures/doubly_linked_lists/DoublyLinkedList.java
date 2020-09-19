@@ -283,15 +283,6 @@ public class DoublyLinkedList {
                 l.insert(index, value);
             }
 
-
-
-
-
-
-
-
-
-
             l.print();
         }
     }

@@ -1,4 +1,4 @@
-package data_structures;
+package data_structures.custom_vectors;
 
 import java.lang.reflect.Array;
 import java.util.Scanner;
