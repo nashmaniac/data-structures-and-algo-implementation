@@ -169,11 +169,31 @@ public class CircularLinkList<E> implements LinkedListInterface<E> {
         return prev.getValue();
     }
 
+    public void rotate() {
+        if(this.tail != null) {
+            this.tail = this.tail.getNext();
+        }
+    }
+
     @Override
     public void reverse() {
-        // nothing to for circle. You can't rotate a circle.
-        return;
-
+        if(this.size == 1) {
+            return ;
+        }
+        SingleLinkNode<E> head = this.tail.getNext();
+        SingleLinkNode<E> tailNode = this.tail;
+        SingleLinkNode<E> current = head;
+        SingleLinkNode<E> prev = null;
+        int count = 0;
+        while (count < this.size+1) {
+            SingleLinkNode<E> next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+            count += 1;
+        }
+        this.tail = prev;
+        head.setNext(tailNode);
     }
 
     @Override
