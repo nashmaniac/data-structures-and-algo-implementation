@@ -26,7 +26,7 @@ public class CircularLinkList<E> implements LinkedListInterface<E> {
 
     @Override
     public boolean empty() {
-        return this.tail.getNext() == null;
+        return this.tail == null;
     }
 
     @Override
@@ -215,6 +215,9 @@ public class CircularLinkList<E> implements LinkedListInterface<E> {
 
     @Override
     public void print() {
+        if(this.size == 0) {
+            return;
+        }
         SingleLinkNode<E> current = this.tail.getNext();
         System.out.println("Size: " + this.size());
         System.out.print(current.getValue());

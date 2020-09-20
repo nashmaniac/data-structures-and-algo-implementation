@@ -65,6 +65,13 @@ public class SinglyLinkListWithTailPointer<E> implements LinkedListInterface<E> 
     @Override
     public void push_back(E value) {
         SingleLinkNode<E> node = new SingleLinkNode<E>(value);
+        if(this.size == 0) {
+            this.head = node;
+            this.tail = node;
+            this.size += 1;
+            return;
+        }
+
         this.tail.setNext(node);
         this.tail = node;
         this.size += 1;
