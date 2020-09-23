@@ -1,13 +1,14 @@
 package data_structures.priority_queues;
 
 import data_structures.priority_queues.entries.PQEntry;
+import data_structures.priority_queues.implementations.MaxHeap;
 import data_structures.priority_queues.implementations.MinHeap;
 
 import java.util.Scanner;
 
 public class PriorityQueueTest {
     public static void main(String[] args) {
-        MinHeap<Integer, String> heap = new MinHeap<>();
+        MaxHeap<Integer, String> heap = new MaxHeap<>();
         String command = "s";
         Scanner scanner = new Scanner(System.in);
         while (!command.equals("q")) {
@@ -19,12 +20,12 @@ public class PriorityQueueTest {
                 heap.insert(key, value);
             }
             if("first".equals(command)) {
-                PQEntry p = (PQEntry) heap.min();
+                PQEntry p = (PQEntry) heap.maxElement();
                 System.out.println("(" + p.getKey() + ","+ p.getValue() +")");
             }
 
             if("remove".equals(command)) {
-                PQEntry p = (PQEntry) heap.removeMin();
+                PQEntry p = (PQEntry) heap.removeMax();
                 System.out.println("(" + p.getKey() + ","+ p.getValue() +")");
             }
 
