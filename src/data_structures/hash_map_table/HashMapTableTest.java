@@ -3,7 +3,6 @@ package data_structures.hash_map_table;
 import data_structures.hash_map_table.implementations.CustomHashMap;
 import data_structures.hash_map_table.interfaces.Entry;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class HashMapTableTest {
