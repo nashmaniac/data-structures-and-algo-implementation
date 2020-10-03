@@ -14,4 +14,7 @@ public interface SearchTreeInterface<T, K, V> {
     T maximum(T node);
     List<T> rangeSearch(K start, K end);
 
+    int height(T node);
+    void delete(K key);
+
 }

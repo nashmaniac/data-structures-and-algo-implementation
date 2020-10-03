@@ -141,6 +141,65 @@ public class BinarySearchTree<K, V> implements SearchTreeInterface<TreeNode<K, V
     }
 
     @Override
+    public int height(TreeNode<K, V> node) {
+        if(node == null) {
+            return 0;
+        }
+        return 1+Math.max(this.height(node.getLeft()), this.height(node.getRight()));
+    }
+
+
+    private void deleteNode(TreeNode<K, V> node) {
+        if(!node.hasChildren()) {
+
+            TreeNode<K, V> parent = node.getParent();
+            if(parent.getRight()!= null && compare(parent.getRight().getKey(), node.getKey()) == 0) {
+                parent.setRight(null);
+            }
+            if(parent.getLeft()!=null && compare(parent.getLeft().getKey(), node.getKey()) == 0) {
+                parent.setLeft(null);
+            }
+            node = null;
+            return;
+        }
+
+        if(!node.hasLeft()) {
+            node.setValue(node.getRight().getValue());
+            node.setKey(node.getRight().getKey());
+            this.deleteNode(node.getRight());
+            return;
+        }
+
+        if(!node.hasRight()) {
+            node.setValue(node.getLeft().getValue());
+            node.setKey(node.getLeft().getKey());
+            this.deleteNode(node.getLeft());
+            return;
+        }
+
+        // at this point both are satisfied
+
+        // find left most
+        TreeNode<K, V> minElem = this.minimum(node.getRight());
+
+        node.setKey(minElem.getKey());
+        node.setValue(minElem.getValue());
+
+        deleteNode(minElem);
+
+
+
+    }
+
+    @Override
+    public void delete(K key) {
+        TreeNode<K, V> node = this.find(key, this.root);
+        if(compare(node.getKey(), key) == 0) {
+            this.deleteNode(node);
+        }
+    }
+
+    @Override
     public int compare(K o1, K o2) {
         Integer k1 = Integer.valueOf(o1.toString());
         Integer k2 = Integer.valueOf(o2.toString());

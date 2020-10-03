@@ -4,9 +4,9 @@ public class TreeNode<K, V> {
     K key;
     V value;
 
-    TreeNode<K, V> left;
-    TreeNode<K, V> right;
-    TreeNode<K, V> parent;
+    TreeNode<K, V> left = null;
+    TreeNode<K, V> right = null;
+    TreeNode<K, V> parent = null;
 
 
     public TreeNode(K key, V value) {
@@ -52,6 +52,19 @@ public class TreeNode<K, V> {
 
     public TreeNode<K, V> getParent() {
         return parent;
+    }
+
+
+    public boolean hasLeft() {
+        return this.left != null;
+    }
+
+    public boolean hasRight() {
+        return this.right != null;
+    }
+
+    public boolean hasChildren() {
+        return hasLeft() || hasRight();
     }
 
 }

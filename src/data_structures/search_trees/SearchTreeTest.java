@@ -42,6 +42,17 @@ public class SearchTreeTest {
                 System.out.println();
             }
 
+            if("height".equals(command)) {
+                System.out.print(bst.height(bst.getRoot()));
+            }
+
+            if("delete".equals(command)) {
+                Integer del_key = scanner.nextInt();
+                bst.delete(del_key);
+            }
+
+
+
 
 
             if("print".equals(command)) {
@@ -61,10 +72,14 @@ public class SearchTreeTest {
 
 
 /*
+add 12 12
 add 5 5
-add 9 9
+add 15 15
 add 3 3
-add 4 4
 add 7 7
-add 8 8
+add 9 9
+add 1 1
+add 13 13
+add 17 17
+add 19 19
  */
