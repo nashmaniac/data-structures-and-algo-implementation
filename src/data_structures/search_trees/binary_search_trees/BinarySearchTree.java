@@ -66,6 +66,7 @@ public class BinarySearchTree<K extends Comparable<K>> implements BinarySearchTr
                 node.setData(temp.data);
                 node.right = this.delete(node.right, temp.data);
             }
+            this.nodeCount--;
         }
         return node;
     }
